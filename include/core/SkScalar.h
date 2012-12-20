@@ -31,6 +31,16 @@
     typedef float   SkScalar;
     extern const uint32_t gIEEENotANumber;
     extern const uint32_t gIEEEInfinity;
+    
+     /** To remove aliasing warning*/
+	    static inline float SkConvertIntToFloat(const uint32_t x){
+	        union {
+	            uint32_t src;
+	            float dst;
+	        }u_casting;
+	        u_casting.src = x;
+	        return u_casting.dst;
+	    }
 
     /** SK_Scalar1 is defined to be 1.0 represented as an SkScalar
     */
@@ -49,7 +59,7 @@
     #define SK_ScalarMin            (-SK_ScalarMax)
     /** SK_ScalarNaN is defined to be 'Not a Number' as an SkScalar
     */
-    #define SK_ScalarNaN      (*(const float*)(const void*)&gIEEENotANumber)
+    #define SK_ScalarNaN      (SkConvertIntToFloat(gIEEENotANumber))
     /** SkScalarIsNaN(n) returns true if argument is not a number
     */
     static inline bool SkScalarIsNaN(float x) { return x != x; }

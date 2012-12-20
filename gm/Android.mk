@@ -75,7 +75,7 @@ LOCAL_C_INCLUDES := \
   external/skia/include/utils \
   external/skia/gm
 
-#LOCAL_CFLAGS := 
+LOCAL_CFLAGS := -Werror=strict-aliasing
 
 LOCAL_MODULE := skia_gm
 
