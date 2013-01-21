@@ -90,6 +90,6 @@ LOCAL_C_INCLUDES := \
 LOCAL_SHARED_LIBRARIES := libcutils libskia libGLESv2 libEGL
 LOCAL_STATIC_LIBRARIES := libskiagpu
 
-LOCAL_MODULE_TAGS := debug tests
+LOCAL_MODULE_TAGS := eng tests
 
 include $(BUILD_EXECUTABLE)
