@@ -46,7 +46,7 @@ LOCAL_CFLAGS += -DTEST_SRC_ALPHA
 LOCAL_CFLAGS += -DSK_USE_FREETYPE_EMBOLDEN
 
 
-LOCAL_CFLAGS += -fvisibility=hidden
+LOCAL_CFLAGS += -fvisibility=hidden -fno-strict-aliasing -Wno-error=strict-aliasing
 LOCAL_SRC_FILES:= SavedPagePlayback.cpp
 
 LOCAL_SRC_FILES += \
